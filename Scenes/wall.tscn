@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr2f8nujule2j"]
+
+[ext_resource type="Script" path="res://Scenes/wall.gd" id="1_7maq1"]
+[ext_resource type="Texture2D" uid="uid://f0ftn8ueifo6" path="res://Sprites/sp_up_floor.png" id="1_e0kgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wins3"]
+size = Vector2(64, 32)
+
+[node name="Wall" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_7maq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e0kgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wins3")
+metadata/normal = Vector2(0, 1)

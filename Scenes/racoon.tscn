@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://sh6s08t2e5pr"]
+
+[ext_resource type="Script" path="res://Scenes/racoon.gd" id="1_3hax0"]
+[ext_resource type="Texture2D" uid="uid://detg3hv1luijy" path="res://Sprites/sp_racoon.png" id="1_4057f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_362ep"]
+size = Vector2(43, 63)
+
+[node name="Enot" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_3hax0")
+air_dump = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4057f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_362ep")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bslnmbyi36pha"]
+
+[ext_resource type="Texture2D" uid="uid://dj0yi75xgst3p" path="res://Sprites/sp_bl_portal_floor.png" id="1_in0cq"]
+[ext_resource type="Script" path="res://Scenes/portal.gd" id="1_lu8du"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seiem"]
+size = Vector2(64, 32)
+
+[node name="in_portal" type="Area2D"]
+script = ExtResource("1_lu8du")
+is_in = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_seiem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_in0cq")
+
+[node name="SpawnPosition" type="Node2D" parent="."]
+position = Vector2(0, -50)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc6nudywputkg"]
+
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_8teko"]
+[ext_resource type="PackedScene" uid="uid://cr2f8nujule2j" path="res://Scenes/wall.tscn" id="1_db2vx"]
+[ext_resource type="PackedScene" uid="uid://sh6s08t2e5pr" path="res://Scenes/racoon.tscn" id="2_swqsy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8teko")
+
+[node name="Enot" parent="." instance=ExtResource("2_swqsy")]
+position = Vector2(-1, -76)
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Wall" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(1, -16)
+
+[node name="Wall2" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(65, -16)
+
+[node name="Wall3" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(129, -16)
+
+[node name="Wall4" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(193, -16)
+
+[node name="Wall5" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(209, -64)
+rotation = -1.5708
+
+[node name="Wall6" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(-80, -65)
+rotation = 1.5708
+
+[node name="Wall7" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(-64, -16)
+
+[node name="Wall8" parent="Level" instance=ExtResource("1_db2vx")]
+position = Vector2(70, -311)
+rotation = 3.14159
+
+[node name="Portals" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="wall_clicked" from="Level/Wall" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall2" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall3" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall4" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall5" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall6" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall7" to="." method="on_wall_clicked"]
+[connection signal="wall_clicked" from="Level/Wall8" to="." method="on_wall_clicked"]
